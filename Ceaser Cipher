@@ -1,4 +1,5 @@
 import os
+CEW = ["a","the","i","as","how","quick","brown","the","cat","dog","fox","walked","ran","train","bike","cycle","rode","car","wonder","letter","one","two","to","further","above","you","red","home","house","that","than","which","how","high","up","down","line","travel","use","how","come","to","us","sea","see","seen","but","buy","by","text","rest","school","go","an","at","as"]
 CoEnWoFile = (os.path.join(os.sys.path[0], "Common English Word"))
 WoCoEnWoFile = open(os.path.join(os.sys.path[0], "CEWs.txt"),"r")
 CipherText = input("Please input the cipher text\n")
@@ -8,8 +9,17 @@ TryText = ""
 a=1
 point = 100/len(CipherText)
 HighScore = [0,0]
-Scorce = 0
-while a < 26:
+Score_ = 0
+
+def Score(Text):
+    score = 0
+    for i in CEW:
+        z=i[0:len(i)-1]
+        if z in Text:
+            score += point
+    return(score)
+
+while a <27:
     TryText=""
     for i in CipherText:
         b=i
@@ -17,12 +27,8 @@ while a < 26:
             TryText +=chr((ord(b)+a)-26)
         else:
             TryText += chr(ord(b)+a)
-        for i in WoCoEnWoFile:
-            if i in TryText:
-                    Scorce += point
-            print("The score increased")
-            print(i)
-    if Scorce > HighScore[0]:
-        HighScore=[Scorce,a]
+    Score_ = Score(TryText)
+    if Score_ >= HighScore[0]:
+        HighScore=[Score_,a]
     a+=1
-print("The cipher level is proabily "+str(HighScore[1]))
+print("The cipher level is proabily "+str(26-HighScore[1]))
