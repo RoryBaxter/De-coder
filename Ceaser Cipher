@@ -1,0 +1,24 @@
+import os
+CoEnWoFile = (os.path.join(os.sys.path[0], "Common English Word"))
+WoCoEnWoFile = open(os.path.join(os.sys.path[0], "Common English Word"),"r")
+CipherText = input("Please input the cipher text\n")
+CipherText.replace(" ","")
+CipherText=CipherText.lower()
+TryText = ""
+a=1
+point = 100/len(CipherText)
+HighScore = [0,0]
+while a =< 26:
+    for i in CipherText:
+        b=i
+        if (ord(b)+a)>126:
+            TryText +=chr((ord(b)+a)-26)
+        else:
+            TryText += chr(ord(b)+a)
+    for i in WoCoEnWoFile:
+        if i in TryText:
+            Scorce += point
+    if Scorce > HighScorce[0]:
+        HighScorce=[Scorce,a]
+    a+=1
+print("The cipher level is proabily "+str(HighScore[1]))
