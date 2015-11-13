@@ -1,6 +1,9 @@
-LF=[]
-LFT=[]
-LFT2=[]
+#The letter frequency
+LeFrq=[]
+LeFrqTxt=[]
+LeFrqTxt2=[]
+
+#The variasion that is curently winning
 Winning=[]
 WinningScore=0
 Current=[]
@@ -32,8 +35,7 @@ text=clean(text)
 
 #Goes though all of the letters in the alphabet and counts them and then adds that vaule to LFT2
 for i in range(97,122):
-    LFT2+=LetterCount(chr(i),text)
-for i in LFT2:
-    LFT+=(i/len(text)*100)
+    LeFquTxt2.append(LetterCount(chr(i),text)
+for i in LeFquTxt2:
+    LeFquTxt.append(i/len(text)*100)
 
-while True
