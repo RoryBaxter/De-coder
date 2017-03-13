@@ -1,7 +1,8 @@
-import os
-CEW = ["a","the","i","as","how","quick","brown","the","cat","dog","fox","walked","ran","train","bike","cycle","rode","car","wonder","letter","one","two","to","further","above","you","red","home","house","that","than","which","how","high","up","down","line","travel","use","how","come","to","us","sea","see","seen","but","buy","by","text","rest","school","go","an","at","as"]
-CoEnWoFile = (os.path.join(os.sys.path[0], "Common English Word"))
-WoCoEnWoFile = open(os.path.join(os.sys.path[0], "CEWs.txt"),"r")
+WoCoEnWoFile = open("CEWs.txt","r")
+CEW = WoCoEnWoFile.readlines()
+for i in range(len(CEW)):
+    CEW[i] = CEW[i].strip("\n")
+
 CipherText = input("Please input the cipher text\n")
 CipherText=CipherText.replace(" ","")
 CipherText=CipherText.lower()
